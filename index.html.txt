@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Perjalanan Kita</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  color: white;
+  scroll-behavior: smooth;
+}
+
+section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, p {
+  text-align: center;
+  max-width: 700px;
+}
+
+h1 {
+  color: #f472b6;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+img {
+  width: 90%;
+  max-width: 380px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+button {
+  margin-top: 30px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  background: #f472b6;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ec4899;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="bestpart.mp3" type="audio/mpeg">
+</audio>
+
+<section>
+  <h1>Happy birthday sayanggkuuuuu 🌸</h1>
+  <p class="animate">
+    wihhhh, udah 18 tahun aja nihh, humsss aku mau buat kilas balik dari awal bangettttt
+  </p>
+  <button onclick="playMusic()">▶ Play our song</button>
+</section>
+
+<section>
+  <img src="foto1.jpg">
+  <p class="animate">
+    nahhh, handini versi sasett, imutt banget kannn, duhh pengen cubit pipinya deh 🤏
+  </p>
+</section>
+
+<section>
+  <img src="foto2.jpg">
+  <p class="animate">
+    kita langsung ke masa sma yaaa, ini masa masa KTI, duhhh deg deg-an bangett ngajak kamu fotbar sayanggg, tapi pada akhirnya beraniii xixi
+  </p>
+</section>
+
+<section>
+  <img src="foto3.jpg">
+  <p class="animate">
+    waduhhh udah fotbar aja nih di rekoleksi, hmmm apakah kapal baru bakal berlayar 🚢, apakah kita menyatakan perasaan dan kita bilang "Handini mau ga kita jadian?" hmmm, menarik kannn
+  </p>
+</section>
+
+<section>
+  <img src="foto4.jpg">
+  <p class="animate">
+    wihhhh, ada apa nich, aroma aroma baru jadiannn, ekhemmmm, cieeeee, langgeng ya sampai nikah, punya anak, tua dan maut memisahkan. Cieeee
+  </p>
+</section>
+
+<section>
+  <img src="foto5.jpg">
+  <p class="animate">
+    wihh foto studio pertama kali yaaaa, duhh manis banget sihhhh, apalagi cewek yang pakai baju putih xixixi, jujurr, kecintaan banget sama nih cewek
+  </p>
+</section>
+
+<section>
+  <img src="foto6.jpg">
+  <p class="animate">
+    Puji Tuhan, handinikuu sayang keterima di UB, dan cowoknya di UNNES yang artinya..... LDR guysss, duhh kangen banget, boleh peluk ga? 🤗
+  </p>
+</section>
+
+<section>
+  <img src="foto7.jpg">
+  <p class="animate">
+    loh loh loh, ini kok bisa ketemuan xixixi, pertama kali Basten ke Malang, kangen ya sayangg? sama sih aku kangen jugaaaa, tapi kalau sama handini tuh ga kerasa bangettt waktunya
+  </p>
+</section>
+
+<section>
+  <img src="foto8.jpg">
+  <p class="animate">
+    loh udah ada pohon natal dibelakang, wihhhh, apakah Natalan bareng??? ternyata tidak temen temen karenaa.....
+  </p>
+</section>
+
+<section>
+  <img src="foto9.jpg">
+  <p class="animate">
+    karena Handini keterima kerja, jujurr kamu keren bangetttt sayanggg, banggaa sangatt sama cewekku iniiii, duhhh kecintaan banget abang loh dek, semangat ya kerjanyaaa, di ujung hari ada Basten kok (kalau handini ga ngantuk xixixi)
+  </p>
+</section>
+
+<section>
+  <h1>🤍</h1>
+  <p class="animate">
+    sayang, makasih udah mau nerima aku sebagai cowokmu, maaf yaa kalau banyak hal yang kamu pengen tapi belum bisa aku kasihh, maacihh udah pengertian ke cowokmuu sayanggg, mwahhhhh.<br><br>
+    I Love you so much sayang
+  </p>
+</section>
+
+<script>
+function playMusic() {
+  const music = document.getElementById("music");
+  music.volume = 0.4;
+  music.play();
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".animate").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
